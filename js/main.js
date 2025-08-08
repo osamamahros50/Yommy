@@ -134,7 +134,7 @@ function displayMeals(meal) {
   for (let i = 0; i < meal.length; i++) {
     cartona += `
        
-        <div class="col-12 col-sm-6 col-lg-3 animate__animated animate__zoomIn">
+        <div class="col-12 col-sm-12 col-lg-3 animate__animated animate__zoomIn">
                 <div onclick="getMealDetails('${meal[i].idMeal}')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
                     <img class="w-100" " src="${meal[i].strMealThumb}" alt="" srcset="">
                     <div class=" meal-layer position-absolute d-flex align-items-center text-black p-2">
@@ -177,7 +177,7 @@ async function displayCategories(categories) {
     `;
   for (let i = 0; i < categories.length; i++) {
     cartona += `
-         <div class="col-12 col-sm-6 col-lg-3">
+         <div class="col-12 col-sm-12 col-lg-3">
                 <div onclick="getCategoryMeals('${
                   categories[i].strCategory
                 }')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer  animate__animated animate__zoomIn ">
@@ -226,7 +226,7 @@ async function displayArea(area) {
     `;
   for (let i = 0; i < area.length; i++) {
     cartona += `
-         <div class="col-12 col-sm-6 col-lg-3">
+         <div class="col-12 col-sm-12 col-lg-3">
                 <div onclick="getAreaMeals('${area[i].strArea}')" class="rounded-2 text-center cursor-pointer animate__animated animate__zoomIn">
                         <i class="fa-solid fa-house-laptop fa-4x"></i>
                         <h3>${area[i].strArea}</h3>
@@ -265,7 +265,7 @@ function displayIngredients(ingredients) {
     `;
   for (let i = 0; i < ingredients.length; i++) {
     cartona += `
-        <div class="col-12 col-sm-6 col-lg-3 animate__animated animate__zoomIn">
+        <div class="col-12 col-sm-12 col-lg-3 animate__animated animate__zoomIn">
                 <div onclick="getIngredientsMeals('${
                   ingredients[i].strIngredient
                 }')" class="rounded-2 text-center cursor-pointer">
