@@ -34,7 +34,7 @@ Yommy allows users to explore meals by categories, areas, or ingredients, search
    ```bash
    git clone https://github.com/osamamahros50/Yommy.git
 
-   ---
+   ----
 ##📌 Usage
 Explore meals visually through categories, countries, or ingredients
 
