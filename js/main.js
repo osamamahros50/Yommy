@@ -28,7 +28,6 @@ document
 
 $(async function () {
   await searchByName("");
-
   $(".loading-screen").fadeOut(500);
   $("body").css("overflow", "auto");
 });
@@ -80,7 +79,7 @@ $(search).on("click", function () {
 });
 function showSearchInput() {
   searchContainer.innerHTML = `
-     <div class="container w-75">
+     <div class="container w-75 ">
             <div class="row">
                 <div class="col-md-6">
                     <input id='searchName' class="inputs"  onkeyup="searchByName(this.value)" type="text" placeholder="Search By Name" class="form-control bg-transparent text-white">
@@ -135,16 +134,17 @@ function displayMeals(meal) {
   for (let i = 0; i < meal.length; i++) {
     cartona += `
        
-        <div class="col-md-3">
+        <div class="col-12 col-sm-6 col-lg-3 animate__animated animate__zoomIn">
                 <div onclick="getMealDetails('${meal[i].idMeal}')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
-                    <img class="w-100" src="${meal[i].strMealThumb}" alt="" srcset="">
-                    <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+                    <img class="w-100" " src="${meal[i].strMealThumb}" alt="" srcset="">
+                    <div class=" meal-layer position-absolute d-flex align-items-center text-black p-2">
                         <h3>${meal[i].strMeal}</h3>
                     </div>
                 </div>
         </div>
         `;
   }
+
 
   rowData.innerHTML = cartona;
 }
@@ -169,7 +169,7 @@ async function getCategories() {
 async function displayCategories(categories) {
   let cartona = "";
   cartona += `
-       <div class="text-end">
+       <div class="text-end ">
             <i id="closeBtn" class="fa-solid fa-xmark p-3 mb-3 rounded-3 shadow fs-4"
                 onclick="$('#rowData').html(''); searchByName('')"
                 style="cursor: pointer;"></i>
@@ -177,10 +177,10 @@ async function displayCategories(categories) {
     `;
   for (let i = 0; i < categories.length; i++) {
     cartona += `
-         <div class="col-md-3">
+         <div class="col-12 col-sm-6 col-lg-3">
                 <div onclick="getCategoryMeals('${
                   categories[i].strCategory
-                }')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+                }')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer  animate__animated animate__zoomIn ">
                     <img class="w-100" src="${
                       categories[i].strCategoryThumb
                     }" alt="" srcset="">
@@ -226,8 +226,8 @@ async function displayArea(area) {
     `;
   for (let i = 0; i < area.length; i++) {
     cartona += `
-         <div class="col-md-3">
-                <div onclick="getAreaMeals('${area[i].strArea}')" class="rounded-2 text-center cursor-pointer">
+         <div class="col-12 col-sm-6 col-lg-3">
+                <div onclick="getAreaMeals('${area[i].strArea}')" class="rounded-2 text-center cursor-pointer animate__animated animate__zoomIn">
                         <i class="fa-solid fa-house-laptop fa-4x"></i>
                         <h3>${area[i].strArea}</h3>
                 </div>
@@ -257,7 +257,7 @@ async function getIngredients() {
 function displayIngredients(ingredients) {
   let cartona = "";
   cartona += `
-      <div class="text-end">
+      <div class="text-end  ">
             <i id="closeBtn" class="fa-solid fa-xmark p-3 mb-3 rounded-3 shadow fs-4"
                 onclick="$('#rowData').html(''); searchByName('')"
                 style="cursor: pointer;"></i>
@@ -265,7 +265,7 @@ function displayIngredients(ingredients) {
     `;
   for (let i = 0; i < ingredients.length; i++) {
     cartona += `
-        <div class="col-md-3">
+        <div class="col-12 col-sm-6 col-lg-3 animate__animated animate__zoomIn">
                 <div onclick="getIngredientsMeals('${
                   ingredients[i].strIngredient
                 }')" class="rounded-2 text-center cursor-pointer">
@@ -293,36 +293,36 @@ function showContacts() {
         onclick="$('#rowData').html(''); searchByName('')"
         style="cursor: pointer;"></i>
     </div>
-    <div class="contact min-vh-100 d-flex mt-5">
-      <div class="container text-center">
-        <form class="w-100">
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
-            <div class="col">
+    <div class="contact  d-flex justify-content-center align-items-center mt-5">
+      <div class="container text-center overflow-hidden">
+        <form class="w-100 ">
+          <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4">
+            <div class="col animate__animated animate__slideInLeft">
               <input id="nameInput" onkeyup="validateRegex(this)" type="text" class="form-control" placeholder="Enter Your Name">
               <div class="invalid-feedback">Special characters and numbers not allowed</div>
             </div>
-            <div class="col">
+            <div class="col animate__animated animate__slideInRight">
               <input id="emailInput" onkeyup="validateRegex(this)" type="email" class="form-control" placeholder="Enter Your Email">
               <div class="invalid-feedback">Email not valid *exemple@yyy.zzz</div>
             </div>
-            <div class="col">
+            <div class="col animate__animated animate__slideInLeft">
               <input id="phoneInput" onkeyup="validateRegex(this)" type="text" class="form-control" placeholder="Enter Your Phone">
               <div class="invalid-feedback">Enter valid Phone Number</div>
             </div>
-            <div class="col">
+            <div class="col animate__animated animate__slideInRight">
               <input id="ageInput" onkeyup="validateRegex(this)" type="number" class="form-control" placeholder="Enter Your Age">
               <div class="invalid-feedback">Enter valid age</div>
             </div>
-            <div class="col">
+            <div class="col animate__animated animate__slideInLeft">
               <input id="passwordInput" onkeyup="validateRegex(this)" type="password" class="form-control" placeholder="Enter Your Password">
               <div class="invalid-feedback">Minimum 6 chars, at least one letter & number</div>
             </div>
-            <div class="col">
+            <div class="col animate__animated animate__slideInRight">
               <input id="repasswordInput" onkeyup="validateRegex(this)" type="password" class="form-control" placeholder="Repassword">
               <div class="invalid-feedback">Please confirm your password</div>
             </div>
           </div>
-          <button id="submitButton" class="btn btn-outline-warning mt-5 m-auto" disabled>Submit</button>
+          <button id="submitButton" class="btn btn-outline-warning mt-5 m-auto animate__animated animate__slideInUp" disabled>Submit</button>
         </form>
       </div>
     </div>
@@ -451,11 +451,11 @@ function displayMealDetails(meal) {
                 onclick="$('#rowData').html(''); searchByName('')"
                 style="cursor: pointer;"></i>
         </div>
-        <div class="col-md-4  shadow-lg">
+        <div class=" col-lg-4   shadow-lg animate__animated animate__slideInLeft">
             <img class="w-100 rounded-3" src="${meal.strMealThumb}" alt="">
             <h2 class="text-warning mt-3">${meal.strMeal}</h2>
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8 animate__animated animate__slideInRight">
             <h2 class="text-warning  mb-2">Instructions</h2>
             <p>${meal.strInstructions}</p>
             <h3 class="text-white"><span class="fw-bolder text-warning ">Area : </span>${meal.strArea}</h3>
